@@ -69,17 +69,13 @@ These screenshots show the local demo workspace using fictional candidate data. 
 ### Interactive Candidate AI Assistant
 
 <p align="center">
-  <img src="assets/mia_chen_chatbot_local_part1.png" alt="Mia Chen candidate profile with resume assistant response (Part 1)" width="50%">
-  <br>
-  <img src="assets/mia_chen_chatbot_local_part2.png" alt="Mia Chen candidate profile with resume assistant response (Part 2)" width="50%">
+  <img src="assets/mia_chen_chatbot_local_part2.png" alt="Mia Chen candidate profile with resume assistant response" width="50%">
 </p>
 
 ### Global Workspace AI Assistant (Gemini)
 
 <p align="center">
   <img src="assets/workspace_chatbot_gemini_part1.png" alt="ResumeBUD floating workspace chatbot (Gemini - Part 1)" width="50%">
-  <br>
-  <img src="assets/workspace_chatbot_gemini_part2.png" alt="ResumeBUD floating workspace chatbot (Gemini - Part 2)" width="50%">
 </p>
 
 The demo records visible in the screenshots are synthetic examples created by the `/demo` endpoint. They are not endorsements or real applicant profiles. The demo dataset currently includes Mia Chen, Ava Morgan, and Noah Patel.
