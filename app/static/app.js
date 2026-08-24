@@ -1,4 +1,4 @@
-const state = { page: "dashboard", candidates: [], jobs: [], results: [] };
+const state = { page: "screening", candidates: [], jobs: [], results: [] };
 const $ = (s) => document.querySelector(s);
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]));
 const pct = (v) => `${(Number(v) * 10).toFixed(0)}%`;

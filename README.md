@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://img.icons8.com/color/96/google-gemini.png" alt="Logo" width="80" height="80">
+  <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Logo" width="80" height="80">
   <h1 align="center">Smart Resume Screener (ResumeBUD)</h1>
 
   <p align="center">
@@ -48,9 +48,9 @@
 
 ## 📸 Screenshots
 
-| Dashboard Overview | Candidate Profile & Screening |
-| :---: | :---: |
-| <img src="https://placehold.co/600x400/1e1e2f/ffffff?text=Dashboard+Screenshot" alt="Dashboard" width="100%"> | <img src="https://placehold.co/600x400/1e1e2f/ffffff?text=Screening+Results+Screenshot" alt="Screening" width="100%"> |
+| Dashboard Overview | Screening Rankings | Detailed Candidate Profile |
+| :---: | :---: | :---: |
+| <img src="assets/dashboard.png" alt="Dashboard" width="100%"> | <img src="assets/screening.png" alt="Screening" width="100%"> | <img src="assets/candidate_profile.png" alt="Candidate Profile" width="100%"> |
 
 *(Replace the placeholder images with screenshots of your running app)*
 
