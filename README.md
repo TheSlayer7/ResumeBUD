@@ -11,7 +11,7 @@
     <br />
     <a href="#demo-video">View Demo</a>
     ·
-    <a href="#api-endpoints">API Reference</a>
+    <a href="#api-reference">API Reference</a>
     ·
     <a href="#screenshots">Screenshots</a>
   </p>
@@ -27,6 +27,8 @@
 </div>
 
 <hr />
+
+<a id="demo-video"></a>
 
 ## 🎥 Demo Video
 
@@ -46,29 +48,49 @@
 - 💻 **Dashboard Interface:** Lightweight frontend for uploading resumes, creating jobs, and screening.
 - 🔐 **Privacy-First Local Mode:** Includes a deterministic local scorer for use without API keys.
 
+<a id="screenshots"></a>
+
 ## 📸 Screenshots
 
 These screenshots show the local demo workspace using fictional candidate data. No personal photographs or real applicant information are included.
 
-### Workspace at a glance
+### Dashboard Overview
 
 <p align="center">
   <img src="assets/dashboard.png" alt="ResumeBUD dashboard showing resume, job, screening, and shortlist metrics" width="90%">
 </p>
 
-### Select candidates for screening
+### Candidate Selection for Screening
 
 <p align="center">
   <img src="assets/screening.png" alt="ResumeBUD screening page with a selected role and candidate checklist" width="90%">
 </p>
 
-### Review an explainable candidate profile
+### Candidate Ranking & Shortlisting (Local Demo)
+
+<p align="center">
+  <img src="assets/ranking_demo_local.png" alt="Ranked shortlist for Data and ML Analyst using only demo candidates in local mode" width="90%">
+</p>
+
+### Interactive Candidate AI Assistant
+
+<p align="center">
+  <img src="assets/mia_chen_chatbot_local.png" alt="Mia Chen candidate profile with resume assistant response in local mode" width="90%">
+</p>
+
+### Global Workspace AI Assistant
+
+<p align="center">
+  <img src="assets/workspace_chatbot_local.png" alt="ResumeBUD floating workspace chatbot responding in local mode" width="90%">
+</p>
+
+### Explainable Candidate Profile & ATS Metrics
 
 <p align="center">
   <img src="assets/candidate_profile.png" alt="ResumeBUD candidate profile with ATS extractability and match details" width="90%">
 </p>
 
-The demo records visible in the screenshots are synthetic examples created by the `/demo` endpoint. They are not endorsements or real applicant profiles.
+The demo records visible in the screenshots are synthetic examples created by the `/demo` endpoint. They are not endorsements or real applicant profiles. The demo dataset currently includes Mia Chen, Ava Morgan, and Noah Patel.
 
 ## 🛠️ Tech Stack & Tools Used
 
@@ -190,6 +212,8 @@ While meeting all core requirements, this project goes above and beyond with sev
 - **ATS Extractability Score**: Evaluates resumes on how machine-readable they are (0-100 score).
 - **One-Click Demo Workspace**: Quickly seed the database with mock roles and candidates to evaluate the app immediately.
 - **Explainable UI**: Detailed candidate profiles showing exactly why a score was given (strengths, gaps, and recommendations).
+
+<a id="api-reference"></a>
 
 ## 🔌 API Endpoints
 
