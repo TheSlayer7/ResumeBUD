@@ -39,7 +39,7 @@
 
 ## ✨ Features
 
-- 📄 **Intelligent Resume Parsing:** Extract structured data (Name, Email, Phone, Skills, Experience, Education) using `PyMuPDF`.
+- 📄 **Intelligent Resume Parsing:** Extract structured data (Name, Email, Phone, Skills, Experience, Education) using `pypdf`.
 - 🔍 **OCR Fallback:** Support for scanned/image-only PDFs via Tesseract.
 - 🎯 **Semantic Matching & Scoring:** Compare resumes with job descriptions using LLMs (OpenAI, Gemini, Ollama) and output an explainable 1-10 match score with justification.
 - 📊 **ATS Extractability Score:** Get feedback from 0-100 on how machine-readable a resume is.
@@ -48,11 +48,27 @@
 
 ## 📸 Screenshots
 
-| Dashboard Overview | Screening Rankings | Detailed Candidate Profile |
-| :---: | :---: | :---: |
-| <img src="assets/dashboard.png" alt="Dashboard" width="100%"> | <img src="assets/screening.png" alt="Screening" width="100%"> | <img src="assets/candidate_profile.png" alt="Candidate Profile" width="100%"> |
+These screenshots show the local demo workspace using fictional candidate data. No personal photographs or real applicant information are included.
 
-*(Replace the placeholder images with screenshots of your running app)*
+### Workspace at a glance
+
+<p align="center">
+  <img src="assets/dashboard.png" alt="ResumeBUD dashboard showing resume, job, screening, and shortlist metrics" width="90%">
+</p>
+
+### Select candidates for screening
+
+<p align="center">
+  <img src="assets/screening.png" alt="ResumeBUD screening page with a selected role and candidate checklist" width="90%">
+</p>
+
+### Review an explainable candidate profile
+
+<p align="center">
+  <img src="assets/candidate_profile.png" alt="ResumeBUD candidate profile with ATS extractability and match details" width="90%">
+</p>
+
+The demo records visible in the screenshots are synthetic examples created by the `/demo` endpoint. They are not endorsements or real applicant profiles.
 
 ## 🛠️ Tech Stack & Tools Used
 
@@ -62,7 +78,7 @@
 | **Database** | ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat&logo=sqlalchemy&logoColor=white) |
 | **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) |
 | **AI & LLM** | ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) ![Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat&logo=google-gemini&logoColor=white) |
-| **PDF Processing**| `PyMuPDF`, `pytesseract` (OCR) |
+| **PDF Processing**| `pypdf`, `pytesseract` (OCR) |
 
 ## 🏗️ Architecture
 
@@ -92,6 +108,11 @@ graph TD;
 - Tesseract OCR (Optional, for scanned PDFs)
 
 ### 1. Clone & Install (or use `setup_and_run.bat`)
+
+```bash
+git clone https://github.com/<your-account>/<your-repository>.git
+cd SmartResumeScreener
+```
 
 **Easiest Setup (Windows):**
 Simply double-click the `setup_and_run.bat` file! It will automatically create a virtual environment, install dependencies, and start the server.
@@ -136,11 +157,29 @@ LLM_PROVIDER=ollama
 OLLAMA_MODEL=llama3.2
 ```
 
+To try the application without an API key, leave `LLM_PROVIDER=local` in `.env`. This uses the built-in deterministic scorer. Cloud providers may send resume content to their services, so review their terms and privacy policies before enabling them.
+
 ### 3. Run the Server
 ```bash
 python run.py
 ```
 Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) for the dashboard, or [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for the interactive Swagger API documentation.
+
+### 4. Load the demo workspace
+
+**Load demo workspace** creates a small, fictional recruiting dataset in the local SQLite database so you can see the dashboard working immediately. It adds three example candidates, three example jobs, and their screening results; it does not download data or contact an AI provider.
+
+1. Open **Settings** and choose **Load demo workspace**.
+2. Open **Screening**, choose a role, select candidates, and choose **Analyze**.
+3. Open **Candidates** to inspect match explanations, evidence, and ATS extractability.
+
+You can also seed the demo data through the API:
+
+```bash
+curl -X POST http://127.0.0.1:8000/demo
+```
+
+To use your own data, upload PDF or TXT resumes from **Resumes**, create a role in **Jobs**, and run it from **Screening**. Uploaded files and the SQLite database stay local and are ignored by Git.
 
 ## 🌟 Additional Features (Beyond Assignment Scope)
 
@@ -171,5 +210,40 @@ While meeting all core requirements, this project goes above and beyond with sev
 
 ## 🛡️ Best Practices & Security
 
-- **Secrets Management:** The repository includes a strict `.gitignore` to prevent committing `.env` files, API keys, or uploaded applicant resumes.
+- **Secrets Management:** Keep API keys in `.env`; never put them in source files, screenshots, issues, or pull requests. The repository's `.gitignore` excludes environment files, databases, virtual environments, caches, logs, and uploaded applicant resumes.
 - **Data Privacy:** Local mode ensures no applicant data leaves your machine. Be mindful of terms when using cloud APIs.
+- **Before pushing:** Run `git status` and confirm that `.env`, `resume_screener.db`, and everything under `uploads/` are untracked and ignored.
+
+## 🙏 Credits
+
+ResumeBUD is built with and acknowledges these open-source projects:
+
+| Project | Used for | License |
+|---|---|---|
+| [FastAPI](https://github.com/fastapi/fastapi) | API framework | MIT |
+| [Uvicorn](https://github.com/encode/uvicorn) | ASGI server | BSD-3-Clause |
+| [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy) | Database access and ORM | MIT |
+| [Pydantic](https://github.com/pydantic/pydantic) | Data validation and schemas | MIT |
+| [pypdf](https://github.com/py-pdf/pypdf) | PDF text and image extraction | BSD-3-Clause |
+| [Pillow](https://github.com/python-pillow/Pillow) | Image handling for OCR | MIT-CMU |
+| [pytesseract](https://github.com/madmaze/pytesseract) | Python OCR integration | Apache-2.0 |
+| [python-dotenv](https://github.com/theskumar/python-dotenv) | Environment configuration | BSD-3-Clause |
+| [HTTPX](https://github.com/encode/httpx) | HTTP client for provider APIs | BSD-3-Clause |
+| [OpenAI Python](https://github.com/openai/openai-python) | Optional OpenAI provider | Apache-2.0 |
+| [pytest](https://github.com/pytest-dev/pytest) | Automated tests | MIT |
+
+SQLite, Tesseract OCR, Google Gemini, Ollama, and the Shields.io badges are separate projects or services with their own terms and notices.
+
+## 📄 License & Third-Party Software
+
+This repository does not currently include a project license. That means the original project code is not automatically free for others to reuse; add a license such as MIT only when the copyright holder is ready to grant those permissions.
+
+The libraries listed in `requirements.txt` are separate third-party works and retain their own licenses. The main items to review are:
+
+- FastAPI, SQLAlchemy, Pydantic, Pillow, and pytest: permissive MIT-family licenses.
+- Uvicorn, `python-dotenv`, and HTTPX: BSD-3-Clause.
+- `python-multipart`, pytesseract, and the OpenAI SDK: Apache-2.0.
+- **pypdf:** permissive BSD-3-Clause license.
+- Tesseract itself is a separate OCR program with its own GPL license and is optional; installing it does not change the license of this repository.
+
+Check the exact license notices for the versions you distribute, including transitive dependencies. API providers such as OpenAI, Google Gemini, and Ollama also have separate service terms and privacy requirements. Do not treat the badges, provider names, or API services as endorsements.

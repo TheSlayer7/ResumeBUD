@@ -16,13 +16,19 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+*.log
+*.tmp
+*.bak
 
 # Application Data
 *.db
+*.db-*
 *.sqlite
+*.sqlite-*
 *.sqlite3
 uploads/*
 !uploads/.gitkeep
+*.csv
 
 # OS and Editor
 .vscode/
