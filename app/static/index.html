@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ResumeBUD | Smart Resume Screener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="shell"><aside class="sidebar"><div class="brand"><span class="mark">RB</span><span>RESUME<br>BUD</span></div><p class="workspace">WORKSPACE</p><nav><button class="nav active" data-page="dashboard">◫ <span>Dashboard</span></button><button class="nav" data-page="resumes">↥ <span>Resumes</span></button><button class="nav" data-page="jobs">▤ <span>Jobs</span></button><button class="nav" data-page="screening">◎ <span>Screening</span></button><button class="nav" data-page="candidates">◉ <span>Candidates</span></button><button class="nav" data-page="settings">⚙ <span>Settings</span></button></nav><div class="user"><b>AM</b><span><strong>Alex Morgan</strong><small>Recruiter workspace</small></span></div></aside>
+<div class="app"><header><div><span class="eyebrow">RESUMEBUD · RECRUITING INTELLIGENCE</span><h1 id="title">Dashboard</h1></div><div class="header-right"><span>● SYSTEM READY</span><a href="/docs" target="_blank" title="Open interactive FastAPI endpoint documentation">API DOCS ↗</a></div></header><main id="content"></main></div></div>
+<div id="modal" class="modal hidden"></div><div id="toast" class="toast"></div>
+<div id="bud-helper" class="bud-helper"><button id="bud-toggle" class="bud-toggle" title="Open ResumeBUD assistant" style="padding: 0; overflow: hidden;"><img src="/MyChatBot.png" alt="RB" style="width: 100%; height: 100%; object-fit: cover;"></button><div id="bud-panel" class="bud-panel hidden"><div class="bud-head"><strong>ResumeBUD</strong><button id="bud-close">x</button></div><p>Ask about your recruiting workspace.</p><div class="bud-quick"><button data-bud-page="resumes">Upload resumes</button><button data-bud-page="screening">Run screening</button><button data-bud-page="candidates">Find candidates</button><button data-bud-page="settings">Settings</button></div><div id="bud-messages" class="bud-messages"><div class="bud-message assistant">Hi. What are you working on?</div></div><form id="bud-form"><input id="bud-input" placeholder="Ask about this workspace..." maxlength="500" required><button aria-label="Send message">→</button></form></div></div>
+  <script src="/app.js"></script><script src="/resume-bud.js"></script></body></html>
