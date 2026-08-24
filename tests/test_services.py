@@ -1,4 +1,5 @@
 from app.schemas import Evaluation
+from app.prompts.screening_prompt import build_screening_prompt
 from app.services.resume_parser import parse_resume
 from app.services.llm_service import LLMService
 from app.services.pdf_parser import PDFExtractionError, extract_pdf_text
@@ -29,6 +30,13 @@ def test_local_screening_is_explainable_without_api_key(monkeypatch):
     assert result.matching_skills == ["Python"]
     assert "FastAPI" in result.missing_skills
     assert result.justification
+
+
+def test_screening_prompt_requires_structured_json():
+    prompt = build_screening_prompt({"skills": ["Python"]}, {"required_skills": ["Python"]})
+    for key in ("score", "matching_skills", "missing_skills", "experience_relevance", "justification"):
+        assert f'"{key}"' in prompt
+    assert "Do not return any additional keys or prose outside the JSON object." in prompt
 
 
 def test_evaluation_schema_rejects_out_of_range_score():
