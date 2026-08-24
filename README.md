@@ -31,12 +31,11 @@
 ## 🎥 Demo Video
 
 <div align="center">
-  <a href="YOUR_LOOM_VIDEO_LINK_HERE" target="_blank">
+  <a href="https://www.loom.com/share/59fa7a8810b94db7bff5bdeeac580c64?t=3" target="_blank">
     <img src="https://img.shields.io/badge/Loom-625DF5?style=for-the-badge&logo=loom&logoColor=white" alt="Loom Video" />
   </a>
 </div>
 
-*Replace the link above with your actual Loom video URL.*
 
 ## ✨ Features
 
