@@ -1,9 +1,10 @@
 <div align="center">
-  <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="Logo" width="80" height="80">
+  <img src="app/static/MyChatBot.png" alt="Logo" width="80" height="80" style="border-radius: 50%;">
   <h1 align="center">Smart Resume Screener (ResumeBUD)</h1>
 
   <p align="center">
-    An intelligent, explainable resume screening service for parsing resumes, extracting skills, and matching candidates with job descriptions.
+    An intelligent, explainable resume screening service for parsing resumes, extracting skills, and matching candidates with job descriptions.<br>
+    Powered by <strong>Gemini 3.5 Flash Lite</strong> and an <strong>Offline Local Scorer</strong>.
     <br />
     <a href="#features"><strong>Explore the docs »</strong></a>
     <br />
@@ -91,9 +92,12 @@ graph TD;
 - Python 3.11+
 - Tesseract OCR (Optional, for scanned PDFs)
 
-### 1. Clone & Install
+### 1. Clone & Install (or use `setup_and_run.bat`)
 
-**Windows (PowerShell):**
+**Easiest Setup (Windows):**
+Simply double-click the `setup_and_run.bat` file! It will automatically create a virtual environment, install dependencies, and start the server.
+
+**Manual Setup (Windows PowerShell):**
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -124,7 +128,7 @@ LLM_MODEL=gpt-4o-mini
 ```env
 LLM_PROVIDER=gemini
 GEMINI_API_KEY=your_gemini_key
-GEMINI_MODEL=gemini-2.5-flash-lite
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
 **Ollama (Local):**
@@ -138,6 +142,16 @@ OLLAMA_MODEL=llama3.2
 python run.py
 ```
 Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) for the dashboard, or [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for the interactive Swagger API documentation.
+
+## 🌟 Additional Features (Beyond Assignment Scope)
+
+While meeting all core requirements, this project goes above and beyond with several production-ready features:
+- **Offline Mode**: A built-in deterministic scorer allows the app to run completely offline without any API keys.
+- **Frontend Dashboard**: A beautiful, vanilla JS single-page application for uploading resumes and managing screening.
+- **OCR Fallback**: Automatically extracts text from scanned, image-only PDFs using Tesseract OCR.
+- **ATS Extractability Score**: Evaluates resumes on how machine-readable they are (0-100 score).
+- **One-Click Demo Workspace**: Quickly seed the database with mock roles and candidates to evaluate the app immediately.
+- **Explainable UI**: Detailed candidate profiles showing exactly why a score was given (strengths, gaps, and recommendations).
 
 ## 🔌 API Endpoints
 
