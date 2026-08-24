@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://img.icons8.com/external-flat-icons-inmotus-design/64/external-AI-artificial-intelligence-flat-icons-inmotus-design-3.png" alt="Logo" width="80" height="80">
+  <img src="https://img.icons8.com/color/96/google-gemini.png" alt="Logo" width="80" height="80">
   <h1 align="center">Smart Resume Screener (ResumeBUD)</h1>
 
   <p align="center">
@@ -29,17 +29,13 @@
 
 ## 🎥 Demo Video
 
-> **Watch the Loom Video Below:**  
-> Watch the 2-3 minute demonstration of the Smart Resume Screener in action.  
-
 <div align="center">
-  <!-- LOOM VIDEO PLACEHOLDER -->
   <a href="YOUR_LOOM_VIDEO_LINK_HERE" target="_blank">
-    <img src="https://cdn.loom.com/sessions/thumbnails/YOUR_LOOM_VIDEO_THUMBNAIL_ID.jpg" alt="Watch the video" width="600"/>
+    <img src="https://img.shields.io/badge/Loom-625DF5?style=for-the-badge&logo=loom&logoColor=white" alt="Loom Video" />
   </a>
 </div>
 
-*Replace the link and image above with your actual Loom video URL and thumbnail.*
+*Replace the link above with your actual Loom video URL.*
 
 ## ✨ Features
 
